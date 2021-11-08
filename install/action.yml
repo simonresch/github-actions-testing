@@ -8,5 +8,5 @@ inputs:
 runs:
   using: "docker"
   image: "docker://cifuzz/cictl:2.18.1"
-  entrypoint: "bash"
-  args: ["cp", "/usr/bin/start_fuzzing.sh", "/github/workflow/"]
+  entrypoint: "cp"
+  args: ["/usr/bin/start_fuzzing.sh", "/github/workflow/"]
