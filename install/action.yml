@@ -9,4 +9,4 @@ runs:
   using: "docker"
   image: "docker://cifuzz/cictl:2.18.1"
   entrypoint: "cp"
-  args: ["/usr/bin/start_fuzzing.sh", "/github/workflow/"]
+  args: ["/usr/bin/start_fuzzing.sh", "/github/workspace/"]
