@@ -1,0 +1,15 @@
+name: "Install"
+description: "Installs the ci-build tools."
+inputs:
+  install_dir:
+    description: "Installation directory."
+    default: "/opt/ci-fuzz"
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - run: wget -S --spider https://s3.eu-central-1.amazonaws.com/public.code-intelligence.com/releases/ci-fuzz-build-tools-installer-2.25.0%2Btesting-linux 2>&1 | grep "ETag:"
+      shell: bash
+    - id: random-number-generator
+      run: wget https://s3.eu-central-1.amazonaws.com/public.code-intelligence.com/releases/ci-fuzz-build-tools-installer-2.25.0%2Btesting-linux
+      shell: bash
