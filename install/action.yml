@@ -7,6 +7,6 @@ inputs:
     required: false
 runs:
   using: "docker"
-  image: "docker://cifuzz/cictl:2.18.1"
+  image: "docker://cifuzz/builder:ci-build"
   entrypoint: "cp"
-  args: ["/usr/bin/start_fuzzing.sh", "/github/workspace/"]
+  args: ["-R", "/opt/ci-fuzz", "/github/workspace/"]
